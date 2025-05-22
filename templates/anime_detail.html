@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ anime.title }} | Anime Store{% endblock %}
+
+{% block content %}
+<h1 class="h1-heading">{{ anime.title }}</h1>
+
+<div class="anime-detail-container">
+  <img class="anime-detail-img" src="{{ anime.thumbnail }}" alt="{{ anime.title }}">
+
+  <p class="anime-description">{{ anime.description }}</p>
+
+  <h2 class="episode-heading">Episodes</h2>
+  <ul class="episode-list">
+    {% for episode in anime.episodes.all %}
+      <li class="episode-item">
+        <strong>{{ episode.title }}</strong>  
+        <a href="{{ episode.video_link }}" target="_blank" class="watch-link">Watch or donwloade</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

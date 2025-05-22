@@ -1,0 +1,8 @@
+Django>=5.1
+psycopg2
+Pillow
+gunicorn
+dj-database-url
+sqlparse
+psycopg2-binary
+python-decouple

@@ -1,0 +1,16 @@
+<!-- filepath: f:\python code\Anime Store\Anime_store\templates\home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="h1-heading">Anime List</h1>
+<div class="card">
+{% for anime in animes %}
+  <div style="margin-bottom: 20px;" class="anime-card">
+    <a href="{% url 'anime_detail' anime.id %}">
+      <img src="{{ anime.thumbnail }}" alt="{{ anime.title }}" width="300">
+    </a>
+    <h3 class="h3-heading">{{ anime.title }}</h3>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
